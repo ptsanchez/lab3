@@ -23,6 +23,27 @@ public class ArrayTests {
     ArrayExamples.reverseInPlace(input1);
     assertArrayEquals(reversedInput1, input1);
   }
+  @Test
+  public void testAverageWithoutLowest() {
+    double[] input = {1, 2, 3, 4};
+    double averageWithoutLowestInput = 3;
+    double returnedValue = ArrayExamples.averageWithoutLowest(input);
+    assertEquals(averageWithoutLowestInput, returnedValue, 0.1);
+  }
 
-  
+  @Test
+  public void testAverageWithoutLowestSameValues() {
+    double[] input = {1, 1, 1, 1};
+    double averageWithoutLowestInput = 0.0;
+    double returnedValue = ArrayExamples.averageWithoutLowest(input);
+    assertEquals(averageWithoutLowestInput, returnedValue, 0.1);
+  }
+
+  @Test
+  public void testAverageWithoutLowestOther() {
+    double[] input = {};
+    //double averageWithoutLowestInput = 9.25;
+    double returnedValue = ArrayExamples.averageWithoutLowest(input);
+    assertEquals(0.0, returnedValue, 0.01);
+  }
 }
